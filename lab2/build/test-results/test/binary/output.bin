@@ -1,0 +1,6 @@
+MyBatis getAll time: 32
+JDBC getAll time: 6
+Hibernate getAll time: 3
+MyBatis save time: 14
+JDBC save time: 11
+Hibernate save time: 12

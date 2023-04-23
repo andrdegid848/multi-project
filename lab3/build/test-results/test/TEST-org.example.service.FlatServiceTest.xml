@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.service.FlatServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-04-22T16:36:29" hostname="DESKTOP-79OU0TS" time="0.7">
+  <properties/>
+  <testcase name="getAllByName()" classname="org.example.service.FlatServiceTest" time="0.587"/>
+  <testcase name="findAll()" classname="org.example.service.FlatServiceTest" time="0.065"/>
+  <testcase name="findById()" classname="org.example.service.FlatServiceTest" time="0.044"/>
+  <system-out><![CDATA[19:36:20.465 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [FlatServiceTest]: using SpringBootContextLoader
+19:36:20.473 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.example.service.FlatServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:36:20.522 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [FlatServiceTest]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+19:36:20.733 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [FlatServiceTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+19:36:20.735 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [FlatServiceTest], class annotated with @DirtiesContext [false] with mode [null]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2023-04-22T19:36:21.302+03:00  INFO 1664 --- [    Test worker] org.example.service.FlatServiceTest      : Starting FlatServiceTest using Java 17.0.3 with PID 1664 (started by Андрей in C:\Users\Андрей\Andrdegid\lab3)
+2023-04-22T19:36:21.304+03:00  INFO 1664 --- [    Test worker] org.example.service.FlatServiceTest      : No active profile set, falling back to 1 default profile: "default"
+2023-04-22T19:36:22.762+03:00  INFO 1664 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-22T19:36:22.875+03:00  INFO 1664 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 3 JPA repository interfaces.
+2023-04-22T19:36:23.628+03:00  INFO 1664 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-22T19:36:23.938+03:00  INFO 1664 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4981d95b
+2023-04-22T19:36:23.944+03:00  INFO 1664 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-22T19:36:24.334+03:00  INFO 1664 --- [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-22T19:36:24.539+03:00  INFO 1664 --- [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-22T19:36:24.610+03:00  INFO 1664 --- [    Test worker] liquibase.lockservice                    : Successfully released change log lock
+2023-04-22T19:36:24.772+03:00  INFO 1664 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-22T19:36:24.893+03:00  INFO 1664 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-22T19:36:25.442+03:00  INFO 1664 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-22T19:36:26.756+03:00  INFO 1664 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-22T19:36:26.774+03:00  INFO 1664 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-22T19:36:28.986+03:00  INFO 1664 --- [    Test worker] org.example.service.FlatServiceTest      : Started FlatServiceTest in 8.182 seconds (process running for 10.102)
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.build_date,
+        h1_0.building_type,
+        h1_0.floors_number,
+        h1_0.material,
+        h1_0.name,
+        h1_0.street_id 
+    from
+        house h1_0 
+    where
+        h1_0.name like ? escape ''
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.post_id 
+    from
+        street s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.house_id,
+        f1_0.number,
+        f1_0.room_number,
+        f1_0.square 
+    from
+        flat f1_0
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.build_date,
+        h1_0.building_type,
+        h1_0.floors_number,
+        h1_0.material,
+        h1_0.name,
+        h1_0.street_id 
+    from
+        house h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.post_id 
+    from
+        street s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.build_date,
+        h1_0.building_type,
+        h1_0.floors_number,
+        h1_0.material,
+        h1_0.name,
+        h1_0.street_id 
+    from
+        house h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.post_id 
+    from
+        street s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.build_date,
+        h1_0.building_type,
+        h1_0.floors_number,
+        h1_0.material,
+        h1_0.name,
+        h1_0.street_id 
+    from
+        house h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.post_id 
+    from
+        street s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.build_date,
+        h1_0.building_type,
+        h1_0.floors_number,
+        h1_0.material,
+        h1_0.name,
+        h1_0.street_id 
+    from
+        house h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.house_id,
+        f1_0.number,
+        f1_0.room_number,
+        f1_0.square 
+    from
+        flat f1_0 
+    where
+        f1_0.id=?
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.build_date,
+        h1_0.building_type,
+        h1_0.floors_number,
+        h1_0.material,
+        h1_0.name,
+        h1_0.street_id 
+    from
+        house h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.post_id 
+    from
+        street s1_0 
+    where
+        s1_0.id=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

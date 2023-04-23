@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.service.StreetServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-04-22T16:36:29" hostname="DESKTOP-79OU0TS" time="0.298">
+  <properties/>
+  <testcase name="findAll()" classname="org.example.service.StreetServiceTest" time="0.039"/>
+  <testcase name="findById()" classname="org.example.service.StreetServiceTest" time="0.037"/>
+  <testcase name="getAllFlatsByStreetId()" classname="org.example.service.StreetServiceTest" time="0.091"/>
+  <testcase name="getAllHousesByStreetId()" classname="org.example.service.StreetServiceTest" time="0.118"/>
+  <system-out><![CDATA[Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.post_id 
+    from
+        street s1_0
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.post_id 
+    from
+        street s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.house_id,
+        f1_0.number,
+        f1_0.room_number,
+        f1_0.square 
+    from
+        flat f1_0 
+    join
+        house h1_0 
+            on h1_0.id=f1_0.house_id 
+    join
+        street s1_0 
+            on s1_0.id=h1_0.street_id 
+    where
+        h1_0.street_id=?
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.build_date,
+        h1_0.building_type,
+        h1_0.floors_number,
+        h1_0.material,
+        h1_0.name,
+        h1_0.street_id 
+    from
+        house h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.post_id 
+    from
+        street s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.build_date,
+        h1_0.building_type,
+        h1_0.floors_number,
+        h1_0.material,
+        h1_0.name,
+        h1_0.street_id 
+    from
+        house h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.build_date,
+        h1_0.building_type,
+        h1_0.floors_number,
+        h1_0.material,
+        h1_0.name,
+        h1_0.street_id 
+    from
+        house h1_0 
+    where
+        h1_0.street_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.post_id 
+    from
+        street s1_0 
+    where
+        s1_0.id=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
